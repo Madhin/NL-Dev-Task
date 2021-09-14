@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slider {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 22rem;
+  /* border: 2px solid black; */
+}
+
+.slider h1 {
+  border: 2px solid white;
+  width: 10rem;
+  height : 10rem;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
