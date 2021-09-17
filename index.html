@@ -11,87 +11,154 @@
 </head>
 <body>
   <section class = "slick">
-  <ul class = "slider">
-    <li>
-      <h1>Slide 1</h1>
-    </li>
-    <li>
-      <h1>Slide 2</h1>
-    </li> 
-    <li>
-      <h1>Slide 3</h1>
-    </li> 
-    <li>
-      <h1>Slide 4</h1>
-    </li> 
-    <li>
-      <h1>Slide 5</h1>
-    </li> 
-    <li>
-      <h1>Slide 6</h1>
-    </li>
-    <li>
-      <h1>Slide 7</h1>
-    </li>
-    <li>
-      <h1>Slide 8</h1>
-    </li> 
-    <li>
-      <h1>Slide 9</h1>
-    </li>  
-  </ul>
+        <div class="carousel">
+          <div>
+            <div class="card">
+              <div class="card-header">
+                <img src="https://lorempixel.com/200/200/abstract/1">
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-title">This is the First slider</div>
+                  <div class="card-text">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>    
+          <div>
+            <div class="card">
+              <div class="card-header">
+                <img src="https://lorempixel.com/200/200/abstract/2">
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-title">This is the Second slider</div>
+                  <div class="card-text">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card">
+              <div class="card-header">
+                <img src="https://lorempixel.com/200/200/abstract/3">
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-title">This is the Third slider</div>
+                  <div class="card-text">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div>
+            <div class="card">
+              <div class="card-header">
+                <img src="https://lorempixel.com/200/200/abstract/4">
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-title">This is the Fourth slider</div>
+                  <div class="card-text">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div>
+            <div class="card">
+              <div class="card-header">
+                <img src="https://lorempixel.com/200/200/abstract/5">
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-title">This is the Fifth slider</div>
+                  <div class="card-text">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card">
+              <div class="card-header">
+                <img src="https://lorempixel.com/200/200/abstract/6">
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-title">This is the Sixth slider</div>
+                  <div class="card-text">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>    
+        </div>
+        </div>
+  
   <div class="container">
-    <button class="prev slick-arrow"> < </button>
-    <button class="next slick-arrow"> > </button>
-</div>
+    <i class = "far fa-chevron-left prev"></i>
+    <i class = "far fa-chevron-right next"></i>
+</div> 
 </section>
 
-  <script src = "/data.js"></script>
+  <script src = "/app.js"></script>
   <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
-  $(document).ready(function() {
- $('.slider').slick({
-  dots: true,
-  centermode: true,
-  infinite: true,
-  speed: 800,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-  prevArrow: $('.prev'),
-  nextArrow: $('.next'),
-  responsive: [
-    {
+
+$(document).ready(function(){
+  $('.carousel').slick({
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots:true,
+    prevArrow: $('.prev'),
+    nextArrow: $('.next'),
+    centerMode: true,
+    responsive: [{
       breakpoint: 1024,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3,
-        infinite: true,
-        dots: true
+
       }
-    },
-    {
-      breakpoint: 600,
+
+    }, {
+      breakpoint: 800,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 2
+        slidesToScroll: 2,
+        dots: true,
+
       }
-    },
-    {
+    },  {
       breakpoint: 480,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
       }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-})})
+    }]
+  });
+});
 </script>
 </body>
 </html>
