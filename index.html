@@ -45,6 +45,14 @@
   </p>
   <div id="slider-range"></div>
 </div>
+
+    <select name="speed" id="speed">
+      <option>Slower</option>
+      <option>Slow</option>
+      <option selected="selected">Medium</option>
+      <option>Fast</option>
+      <option>Faster</option>
+    </select>
    
     </section>
 
@@ -221,6 +229,21 @@ $(document).ready(function(){
         " - £" + $( "#slider-range" ).slider( "values", 1 ) );
     } );
     </script>
+
+<script>
+  $( function() {
+    $( "#speed" ).selectmenu();
+ 
+    $( "#files" ).selectmenu();
+ 
+    $( "#number" )
+      .selectmenu()
+      .selectmenu( "menuWidget" )
+        .addClass( "overflow" );
+ 
+    $( "#salutation" ).selectmenu();
+  } );
+  </script>
 
 </body>
 </html>
