@@ -11,6 +11,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <link rel="stylesheet" href="/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+
+  
 </head>
 <body>
 
@@ -30,23 +36,17 @@
 
   <section class = "nav-bar">
     <div class = "search">
-      <input type="text" placeholder="Search..">
+      <input type="text" placeholder="Search">
     </div>
 
-    <div class="dual-range" data-min="0" data-max="90">
-      <span class="handle left"></span>
-      <span class="highlight"></span>
-      <span class="handle right"></span>
-    </div>
-  </div>
-
-
-    <!-- <div class="multi-range">
-      <div id="slider-value-1">0</div>
-      <input type="range" min="0" max="50" value="0" id="lower" name = "lower">
-      <input type="range" min="0" max="50" value="50" id="upper" name = "upper">
-      <div id="slider-value-2">0</div>
-    </div> -->
+    <div class = "range-bar">
+  <p>
+    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+  </p>
+  <div id="slider-range"></div>
+</div>
+   
+    </section>
 
   <section class = "title">
     <h1>Chosen for you</h1>
@@ -55,7 +55,6 @@
 
   <section class = "slick">
         <div class="carousel">
-          <div>
             <div class="card">
               <div class="card-header">
                 <img src="https://lorempixel.com/200/200/abstract/1">
@@ -69,7 +68,7 @@
                 </div>
               </div>
             </div>
-          </div>    
+           
           <div>
             <div class="card">
               <div class="card-header">
@@ -154,6 +153,8 @@
 </div> 
 </section>
 
+
+
   <script src = "/app.js"></script>
   <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -203,5 +204,23 @@ $(document).ready(function(){
   });
 });
 </script>
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      $( "#slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: 100,
+        values: [ 10, 50 ],
+        slide: function( event, ui ) {
+          $( "#amount" ).val( "£" + ui.values[ 0 ] + " - £" + ui.values[ 1 ] );
+        }
+      });
+      $( "#amount" ).val( "£" + $( "#slider-range" ).slider( "values", 0 ) +
+        " - £" + $( "#slider-range" ).slider( "values", 1 ) );
+    } );
+    </script>
+
 </body>
 </html>
