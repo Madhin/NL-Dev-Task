@@ -7,6 +7,8 @@ const filters = {
   keywords: null
 }
 
+const searchBar = document.getElementById('searchBar');
+
 function renderSlider() {
   $('.carousel').slick({
     speed: 500,
@@ -47,6 +49,18 @@ function renderSlider() {
     }]
   });
 
+
+
+  // $( function() {
+  //   $( ".carousel" ).dialog();
+  // } );
+
+  $(".carousel").slickLightbox({
+    itemSelector: '.card-header img',
+    src: 'src',
+    caption: "caption",
+  })
+
   slides = [...productDataWomens]
 
   if(filters.minPrice !== null  && filters.maxPrice !== null) {
@@ -61,9 +75,9 @@ function renderSlider() {
     })
   }
 
-  if(filters.keywords !== null) {
+  if(filters.keywords !== null && filters.keywords !== "") {
     slides = slides.filter(product => {
-      return product.productTitle.indexOf(filters.keywords.toLowerCase()) >= 0
+      return product.productTitle.toLowerCase().indexOf(filters.keywords.toLowerCase()) >= 0
     })
   }
   // TODO - Add any filters here via .filter before .map if any are set.
@@ -77,16 +91,15 @@ function renderSlider() {
   // This will reduce the array down to just the objects that match the filter parameters before rendering the slider
 
   slides.map(product => {
-    $('.carousel').slick('slickAdd', `
-      <div class="card">
+    $('.carousel').slick('slickAdd', 
+      `<div class="card">
         <div class="card-header">
-          <img src="${product.imageSrc}">
+        <img data-caption="<a target='_blank' href='${product.productUrl}'>${product.productTitle}</a> <p>${product.productTitle}</p>" src="${product.imageSrc}">
         </div>
         <div class="card-body">
           <div class="card-content">
             <div class="card-title">${product.productTitle}</div>
             <div class="card-text">
-              <p>${product.price}</p>
             </div>
           </div>
         </div>
@@ -110,7 +123,8 @@ $(document).ready(function(){
         filters.maxPrice = ui.values[1];
         console.log(ui.values);
         // console.log(filters);
-        $('.carousel').slick('removeSlide', null, null, true).slick('unslick');
+        $('.carousel').slick('removeSlide', null, null, true)
+        $('.carousel').slick('unslick');
         renderSlider();
       }
     });
@@ -124,7 +138,8 @@ $(document).ready(function(){
       filters.type = ui.item.value;
        console.log(filters);
        console.log(ui);  
-      $('.carousel').slick('removeSlide', null, null, true).slick('unslick');
+       $('.carousel').slick('removeSlide', null, null, true)
+       $('.carousel').slick('unslick');
       renderSlider();
     }});
 
@@ -142,29 +157,39 @@ $(document).ready(function(){
 
   $( function() {
     var availableTags = [
-      "Footwear",
-      "Groovy",
-      "Haskell",
-      "Jackets",
-      "Jeans",
-      "Leggings",
-      "Nightwear",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme",
-      "Tops"
+      "boots",
+      "footwear",
+      "jackets",
+      "jeans",
+      "leggings",
+      "nightwear",
+      "tops"
     ];
-    $( "#tags" ).autocomplete({
-      // search: function( event, ui ) {
-      //   console.log(ui); 
-        // filters.keywords = ui.item.value
-      // },
-      source: availableTags
-    });
-  } );
+
+    $("#searchBar").on("keyup",function (e) {
+      const searchString = e.target.value;
+          filters.keywords = searchString;
+          console.log(filters);
+          // renderSlider();
+          $('.carousel').slick('removeSlide', null, null, true)
+          $('.carousel').slick('unslick');
+        renderSlider();
+    } )
+
+    // $( "#searchBar" ).autocomplete({
+    //   search: function( event, ui ) {
+    //     searchBar.addEventListener('keyup', (e) => {
+    //       const searchString = e.target.value;
+    //       filters.keywords = searchString;
+    //       console.log(filters);
+    //       // renderSlider();
+    //       $('.carousel').slick('removeSlide', null, null, true).slick('unslick');
+    //     renderSlider();
+    //     })
+    //   },
+    //   source: availableTags
+    // });
+  });
 
   renderSlider();
 });

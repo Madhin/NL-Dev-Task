@@ -25,6 +25,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 font-family: 'Noto Sans', sans-serif;
+margin-top: 2%;
+margin-bottom: 2%;
 }
 
 .title h1{
@@ -44,20 +46,45 @@ font-family: 'Noto Sans', sans-serif;
   border: 2px solid black;
 }
 
-.ui-widget input{
-  background-color: black;
+.search{
+  width:300px;
+  display: flex;
+  justify-content: center;
+}
+
+.search input{
+  background-color: white;
   border-radius: 5px;
   height: 80%;
+  width: 100%;
   margin: 2%;
   padding: 2%;
 }
 
-.ui-widget input:hover{
+.search input:hover{
   background-color: white;
+  transition: 0.6s;
 }
 
 .search input::placeholder{
   color: #999999
+}
+
+#product-button{
+  height: 80%;
+  margin-top: 0.3%;
+  background-color: black;
+  border: none
+}
+
+#product-button:hover{
+  background-color: white;
+  transition: 0.6s;
+}
+
+#product-button span {
+  color: #999999;
+  margin-top: 2%;
 }
 
 .range-bar{
@@ -73,6 +100,12 @@ font-family: 'Noto Sans', sans-serif;
   margin-left: 5%;
   margin-top: 1%;
   
+}
+
+.slick-track{
+  margin-left: 0;
+  margin-right: 0;
+  align-self: center;
 }
 
 #amount{
@@ -109,6 +142,7 @@ border-radius: 5px;
   width:90%;
   margin:0 auto;
 }
+
 .slick-slide{
   margin:10px;
 }
@@ -176,10 +210,46 @@ border-radius: 5px;
 }
 
 @media screen and (max-width: 600px) {
+
+  .header{
+    display: flex;
+    justify-content: center;
+    height: 6rem
+  }
+  
+  .logo{
+    text-align: center;
+  }
+
   .logo img{
     width: 15em;
-    margin-top: 2%;
-    margin-left: 8%;
+    margin-top: 10%;
+  }
+
+  .nav-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10rem;
+  }
+
+  .search{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #searchBar{
+    width: 90%
+  }
+
+  .range-bar{
+    width: 100%;
+    margin-bottom: 2%;
+  }
+
+  #product-button{
+    height: 20%;
   }
 
   .store, .account {
