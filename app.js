@@ -50,11 +50,6 @@ function renderSlider() {
   });
 
 
-
-  // $( function() {
-  //   $( ".carousel" ).dialog();
-  // } );
-
   $(".carousel").slickLightbox({
     itemSelector: '.card-header img',
     src: 'src',
@@ -80,15 +75,7 @@ function renderSlider() {
       return product.productTitle.toLowerCase().indexOf(filters.keywords.toLowerCase()) >= 0
     })
   }
-  // TODO - Add any filters here via .filter before .map if any are set.
-  // productDataWomens.filter(product => {
-  //   return product.size ==== filter.size
-  // }).filter(product => {
-  //   return product.price >= filter.minPrice && product.price <= filters.maxPrice
-  // }).filter(product => {
-  //   return product.title.indexOf(filters.keyword) >= 0
-  // }).map(product => {
-  // This will reduce the array down to just the objects that match the filter parameters before rendering the slider
+
 
   slides.map(product => {
     $('.carousel').slick('slickAdd', 
@@ -177,34 +164,13 @@ $(document).ready(function(){
         renderSlider();
     } )
 
-    // $( "#searchBar" ).autocomplete({
-    //   search: function( event, ui ) {
-    //     searchBar.addEventListener('keyup', (e) => {
-    //       const searchString = e.target.value;
-    //       filters.keywords = searchString;
-    //       console.log(filters);
-    //       // renderSlider();
-    //       $('.carousel').slick('removeSlide', null, null, true).slick('unslick');
-    //     renderSlider();
-    //     })
-    //   },
-    //   source: availableTags
-    // });
-  });
+    
 
   renderSlider();
+})
+
 });
 
-
-
-
-// $('.yourslider').slickLightbox({
-//   src: 'src',
-// itemSelector: 'div img',
-// navigateByKeyboard  : true,
-// captionPosition     : 'dynamic',
-// caption            : 'name'
-// });
 
 
 
