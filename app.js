@@ -81,13 +81,13 @@ function renderSlider() {
     $('.carousel').slick('slickAdd', 
       `<div class="card">
         <div class="card-header">
-        <img data-caption="<a target='_blank' href='${product.productUrl}'>${product.productTitle}</a> <p>${product.productTitle}</p>" src="${product.imageSrc}">
+        <img data-caption="<a target='_blank' href='${product.productUrl}'> ${product.productTitle} </a> <p>£${product.price}</p>" src="${product.imageSrc}">
         </div>
         <div class="card-body">
           <div class="card-content">
             <div class="card-title">${product.productTitle}</div>
             <div class="card-text">
-              <p>${product.price}</p>
+              <p>£${product.price}</p>
             </div>
           </div>
         </div>
@@ -141,18 +141,7 @@ $(document).ready(function(){
     $("#salutation").selectmenu();
   });
 
-  
 
-  $( function() {
-    var availableTags = [
-      "boots",
-      "footwear",
-      "jackets",
-      "jeans",
-      "leggings",
-      "nightwear",
-      "tops"
-    ];
 
     $("#searchBar").on("keyup",function (e) {
       const searchString = e.target.value;
@@ -167,8 +156,6 @@ $(document).ready(function(){
     
 
   renderSlider();
-})
-
 });
 
 

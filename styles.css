@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .header{
@@ -24,13 +25,13 @@
 display: flex;
 flex-direction: column;
 align-items: center;
-font-family: 'Noto Sans', sans-serif;
 margin-top: 2%;
 margin-bottom: 2%;
 }
 
 .title h1{
   font-size: 2em;
+  margin-bottom: 1%;
 }
 
 .title h3{
@@ -73,7 +74,6 @@ margin-bottom: 2%;
 #product-button{
   height: 80%;
   margin-top: 0.3%;
-  background-color: black;
   border: none
 }
 
@@ -108,6 +108,7 @@ text-align: center;
 background-color: black;
 color: white;
 border-radius: 5px;
+margin-left: -20%;
 }
 
 #slider-range {
@@ -128,13 +129,16 @@ border-radius: 5px;
 #product-button{
   height: 80%;
   margin-top: 0.3%;
-  background-color: black;
   border: none
 }
 
 .carousel{
   width:90%;
   margin:0 auto;
+}
+
+.slick-track{
+  height: 35rem
 }
 
 .slick-slide{
@@ -154,13 +158,29 @@ border-radius: 5px;
   vertical-align: top;
 }
 .card-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   text-align: left;
   color: #333;
   padding: 15px;
+  height:10em;
 }
+
+
 .card-text{
-  font-size: 14px;
-  font-weight: 300;
+  margin-top: 2%;
+  font-size: 1em;
+  font-weight: 800;
+}
+
+.slick-lightbox-slick-caption a {
+  color: white;
+}
+
+.slick-lightbox-slick-caption p {
+  color: white;
+  margin-top: 5%;
 }
 
 .container{
@@ -203,6 +223,9 @@ border-radius: 5px;
   background-color: black;
 }
 
+
+
+
 @media screen and (max-width: 600px) {
 
   .header{
@@ -218,6 +241,10 @@ border-radius: 5px;
   .logo img{
     width: 15em;
     margin-top: 10%;
+  }
+
+  .slick-track{
+    height: 25rem
   }
 
   .nav-bar{
@@ -242,8 +269,16 @@ border-radius: 5px;
     margin-bottom: 2%;
   }
 
+  #amount{
+    margin-left: -15%;
+    }
+
   #product-button{
-    height: 20%;
+    height: 25%;
+  }
+
+  .box-img{
+    color: white;
   }
 
   .store, .account {
