@@ -60,6 +60,12 @@ function renderSlider() {
       return product.productUrl.indexOf(filters.type.toLowerCase()) >= 0
     })
   }
+
+  if(filters.keywords !== null) {
+    slides = slides.filter(product => {
+      return product.productTitle.indexOf(filters.keywords.toLowerCase()) >= 0
+    })
+  }
   // TODO - Add any filters here via .filter before .map if any are set.
   // productDataWomens.filter(product => {
   //   return product.size ==== filter.size
@@ -102,7 +108,8 @@ $(document).ready(function(){
       change: function (event, ui) {
         filters.minPrice = ui.values[0];
         filters.maxPrice = ui.values[1];
-        console.log(filters);
+        console.log(ui.values);
+        // console.log(filters);
         $('.carousel').slick('removeSlide', null, null, true).slick('unslick');
         renderSlider();
       }
@@ -111,11 +118,12 @@ $(document).ready(function(){
       " - £" + $("#slider-range").slider("values", 1));
   });
 
+
   $(function () {
     $("#product").selectmenu({change: function (event, ui) {
       filters.type = ui.item.value;
-      console.log(filters);
-      console.log(ui);  
+       console.log(filters);
+       console.log(ui);  
       $('.carousel').slick('removeSlide', null, null, true).slick('unslick');
       renderSlider();
     }});
@@ -130,9 +138,47 @@ $(document).ready(function(){
     $("#salutation").selectmenu();
   });
 
+  
+
+  $( function() {
+    var availableTags = [
+      "Footwear",
+      "Groovy",
+      "Haskell",
+      "Jackets",
+      "Jeans",
+      "Leggings",
+      "Nightwear",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme",
+      "Tops"
+    ];
+    $( "#tags" ).autocomplete({
+      // search: function( event, ui ) {
+      //   console.log(ui); 
+        // filters.keywords = ui.item.value
+      // },
+      source: availableTags
+    });
+  } );
+
   renderSlider();
 });
 
+
+
+
+// $('.yourslider').slickLightbox({
+//   src: 'src',
+// itemSelector: 'div img',
+// navigateByKeyboard  : true,
+// captionPosition     : 'dynamic',
+// caption            : 'name'
+// });
 
 
 
