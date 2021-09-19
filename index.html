@@ -46,12 +46,15 @@
       <div id="slider-range"></div>
     </div>
 
-    <select name="speed" id="speed">
+    <select name="product" id="product">
+      <option value = "" disabled selected>Select Type</option>
       <option>Jackets</option>
-      <option>Slow</option>
-      <option selected="selected">Medium</option>
-      <option>Fast</option>
-      <option>Faster</option>
+      <option>Tops</option>
+      <option>Jeans</option>
+      <option>Leggings</option>
+      <option>Nightwear</option>
+      <option>Footwear</option>
+      <option value = "Womens">Select All</option>
     </select>
 
   </section>
@@ -77,22 +80,6 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="/app.js"></script>
-
-
-  <script>
-    $(function () {
-      $("#speed").selectmenu();
-
-      $("#files").selectmenu();
-
-      $("#number")
-        .selectmenu()
-        .selectmenu("menuWidget")
-        .addClass("overflow");
-
-      $("#salutation").selectmenu();
-    });
-  </script>
 
 </body>
 
