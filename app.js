@@ -100,6 +100,7 @@ function renderSlider() {
           <div class="card-content">
             <div class="card-title">${product.productTitle}</div>
             <div class="card-text">
+              <p>${product.price}</p>
             </div>
           </div>
         </div>
