@@ -240,6 +240,10 @@ margin-left: -20%;
     margin-top: 10%;
   }
 
+  .slick-slide {
+    height: 100% !important;
+  }
+
   .slick-track{
     height: 25rem
   }
