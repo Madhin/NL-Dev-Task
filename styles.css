@@ -137,12 +137,9 @@ margin-left: -20%;
   margin:0 auto;
 }
 
-.slick-track{
-  height: 35rem
-}
-
 .slick-slide{
   margin:10px;
+  height: 90% !important
 }
 .slick-slide img{
   width:100%;
