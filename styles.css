@@ -183,6 +183,10 @@ margin-left: -20%;
   margin-top: 5%;
 }
 
+.slick-lightbox .slick-prev {
+  display: none !important;
+}
+
 .container{
   display: flex;
   flex-wrap: wrap;
